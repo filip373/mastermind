@@ -1,12 +1,15 @@
 require './mastermind'
 require './board'
 require './secret_code'
+require './input_colors'
+require './colors'
 
-colors = {
-  'r' => :red, 'g' => :green, 'b' => :blue,
-  'y' => :yellow, 'o' => :orange, 'p' => :purple
-}
+colors = InputColors.new(4, Colors.new({
+      'r' => :red, 'g' => :green, 'b' => :blue,
+      'y' => :yellow, 'o' => :orange, 'p' => :purple
+    })
+  )
 
-code = SecretCode.new(colors, 4).generate
+code = SecretCode.new(colors).generate
 p code
-Mastermind.new(12, Board.new(code), colors, 4).start
+Mastermind.new(12, Board.new(code), colors).start

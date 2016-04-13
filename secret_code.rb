@@ -1,13 +1,12 @@
 class SecretCode
 
-  def initialize(colors, size)
+  def initialize(colors)
     @colors = colors
-    @size = size
   end
 
   def generate
     code = []
-    @size.times { code.push(@colors.values.to_a.sample) }
+    @colors.size.times { code.push(@colors.values.to_a.sample) }
     return code
   end
 
