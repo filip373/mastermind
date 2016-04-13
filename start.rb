@@ -10,6 +10,4 @@ colors = InputColors.new(4, Colors.new({
     })
   )
 
-code = SecretCode.new(colors).generate
-p code
-Mastermind.new(12, Board.new(code), colors).start
+Mastermind.new(12, colors).start

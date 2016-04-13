@@ -3,9 +3,8 @@ require './creating_game'
 
 class Mastermind
 
-  def initialize(tries, board, colors)
+  def initialize(tries, colors)
     @tries = tries
-    @board = board
     @colors = colors    
   end
 
@@ -24,8 +23,8 @@ class Mastermind
 
   def create_game(input)
     case input
-    when 'g' then return GuessingGame.new(@tries, @board, @colors)
-    when 'c' then return CreatingGame.new
+    when 'g' then return GuessingGame.new(@tries, @colors)
+    when 'c' then return CreatingGame.new(@tries, @colors)
     else 'none'
     end
   end
